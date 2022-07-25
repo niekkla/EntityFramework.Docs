@@ -19,7 +19,7 @@ internal class MyContext : DbContext
         modelBuilder.Entity<Post>()
             .HasOne(p => p.Blog)
             .WithMany(b => b.Posts)
-            .HasForeignKey("BlogForeignKey");
+            .HasForeignKey<Post>("BlogForeignKey");
     }
 }
 
